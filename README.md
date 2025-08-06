@@ -15,7 +15,7 @@
 
 ---
 
-Tracy is a modern Open Source Intelligence (OSINT) orchestrator that maps a target’s digital footprint starting from an email and/or phone number. It runs concurrent, privacy‑respecting checks across social platforms, breach sources, search engines, DNS/WHOIS, and reputation/verification services, correlates signals, and generates reports and an interactive dashboard.
+Tracy is a comprehensive Open Source Intelligence (OSINT) tool that maps digital footprints starting from email addresses and/or phone numbers. It performs concurrent, privacy-respecting investigations across multiple platforms including social media, breach databases, search engines, professional networks, DNS/WHOIS records, and reputation services. The tool correlates findings across sources and generates detailed reports with an interactive dashboard for visualization.
 
 ---
 
@@ -29,12 +29,18 @@ Tracy is a modern Open Source Intelligence (OSINT) orchestrator that maps a targ
 
 | Feature | Description |
 |---------|-------------|
-| 📧 Email & 📱 Phone Inputs | Investigate digital footprint from email/phone |
-| ⚡ Concurrent OSINT Modules | Social media, breach intelligence, search engine dorking, phone intel, DNS/WHOIS, reputation/verification, presence checks |
-| 🔗 Actionable Links | Direct links to profiles, breaches, and search results |
-| 🧠 Correlation Engine | Summarizes cross-signal insights |
-| 📝 Report Generator | Outputs in HTML, Markdown, Text, JSON |
-| 📊 Interactive Dashboard | Explore results visually (Dash/Plotly) |
+| 📧 Email & 📱 Phone Inputs | Investigate digital footprint from email addresses and phone numbers |
+| ⚡ Concurrent OSINT Modules | Social media platforms, breach databases (HIBP, DeHashed), search engines, professional networks, phone intelligence, DNS/WHOIS lookups |
+| 🔍 Advanced Search | Google dorking, Bing searches, professional platform scanning (LinkedIn-style) |
+| 🚨 Breach Intelligence | HaveIBeenPwned and DeHashed integration for compromise detection |
+| 📱 Phone Analysis | Carrier detection, geolocation, timezone analysis using phonenumbers library |
+| 🌐 DNS/WHOIS Analysis | Domain registration info, DNS records, email domain analysis |
+| 🔗 Social Media Discovery | Platform presence detection via SocialScan and Sherlock integration |
+| 📊 Email Reputation | EmailRep.io and Hunter.io integration for deliverability and risk assessment |
+| 🧠 Data Correlation | Cross-platform signal correlation and pattern detection |
+| 📝 Multi-Format Reports | HTML, PDF, JSON, and Markdown report generation |
+| 📊 Interactive Dashboard | Real-time visualization with Dash/Plotly framework |
+| 🔒 Privacy-First Design | No data retention, optional API usage, respects rate limits |
 
 ---
 
@@ -50,7 +56,7 @@ Tracy is a modern Open Source Intelligence (OSINT) orchestrator that maps a targ
 
 **1) Clone and setup environment**
 ```sh
-git clone https://github.com/your-org/tracy.git
+git clone https://github.com/Xenonesis/tracy.git
 cd tracy
 python -m venv .venv
 .venv\Scripts\activate  # Windows
@@ -66,10 +72,16 @@ pip install -r requirements.txt
 **3) Configure environment**
 - Copy .env.example to .env and fill the keys you want to enable
 ```sh
-cp .env.example .env
+cp .env.example .env  # Linux/macOS
+copy .env.example .env  # Windows
 ```
 
 _Minimum usage does not require any API keys, but some integrations will be no-ops without them._
+
+**4) Test the installation**
+```sh
+python tracy.py --help
+```
 </details>
 
 ---
@@ -204,6 +216,44 @@ ENABLE_SHERLOCK=true
 
 
 ## 🏗️ Architecture Overview
+
+Tracy follows a modular, async-first architecture for maximum performance and extensibility:
+
+```
+tracy.py (Main Orchestrator)
+├── modules/
+│   ├── social_media.py      # Social platform searches
+│   ├── breach_checker.py    # HIBP, DeHashed integration
+│   ├── search_engines.py    # Google/Bing dorking
+│   ├── professional.py      # LinkedIn-style searches
+│   ├── phone_intel.py       # Phone number analysis
+│   ├── util_dns_whois.py    # DNS/WHOIS utilities
+│   ├── data_correlator.py   # Cross-signal analysis
+│   ├── report_generator.py  # Multi-format reporting
+│   └── dashboard.py         # Interactive visualization
+├── config.py               # Configuration management
+└── results/                # Investigation outputs
+    └── YYYY-MM-DD/
+        └── YYYY-MM-DD_HH-mm-ss/
+            ├── results.json
+            └── report.html
+```
+
+### Core Modules
+
+| Module | Purpose | Key Features |
+|--------|---------|--------------|
+| **social_media.py** | Social platform discovery | Twitter, Facebook, Instagram, TikTok, Reddit searches |
+| **breach_checker.py** | Breach database queries | HaveIBeenPwned, DeHashed API integration |
+| **search_engines.py** | Search engine intelligence | Google dorking, Bing searches, advanced operators |
+| **professional.py** | Professional network scanning | LinkedIn-style searches, job portal queries |
+| **phone_intel.py** | Phone number analysis | Carrier detection, geolocation, timezone analysis |
+| **util_dns_whois.py** | Domain intelligence | DNS records, WHOIS data, domain reputation |
+| **data_correlator.py** | Pattern recognition | Cross-platform correlation, signal analysis |
+| **report_generator.py** | Output generation | HTML, PDF, JSON, Markdown reports |
+| **dashboard.py** | Interactive visualization | Dash/Plotly dashboard, network graphs |
+
+## 🏗️ Technical Architecture
 
 ```mermaid
 graph TD
@@ -428,7 +478,7 @@ ENABLE_SHERLOCK=true
 ```sh
 python tracy.py --email target@example.com
 python tracy.py --phone +15551234567
-python tracy.py --email target@example.com --phone +15551234567
+python tracy.py --email target@example.com --phone "+15551234567"
 ```
 
 **Options:**
@@ -747,6 +797,39 @@ flowchart TD
     G --> M[Check DNS/WHOIS Ports]
     H --> N[Create Fresh Virtualenv]
 ```
+
+## ✅ Testing the Installation
+
+To verify Tracy is working correctly, run these tests:
+
+**1. Test imports and basic functionality:**
+```sh
+python -c "from tracy import Tracy; print('✅ Tracy imports successfully')"
+```
+
+**2. Test configuration loading:**
+```sh
+python -c "from config import Config; c=Config(); print(f'✅ Config loaded - Timeout: {c.REQUEST_TIMEOUT}s')"
+```
+
+**3. Test input validation:**
+```sh
+python -c "from tracy import Tracy; t=Tracy(); result=t.validate_inputs(email='test@example.com'); print('✅ Validation works:', result['email'])"
+```
+
+**4. Run help command:**
+```sh
+python tracy.py --help
+```
+
+**5. Test with a safe example (no real investigation):**
+```sh
+python -c "from tracy import Tracy; print('✅ All modules loaded successfully')"
+```
+
+If all tests pass, Tracy is ready for use!
+
+## 🔧 Troubleshooting
 
 | Error Type                | Solution                                      | Command/Action Example                |
 |--------------------------|-----------------------------------------------|---------------------------------------|
