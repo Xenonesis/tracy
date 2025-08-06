@@ -4,13 +4,12 @@
 
 <h1 align="center">Tracy — Digital Footprint OSINT Tool</h1>
 
-<p align="center">
-  <a href="https://github.com/Xenonesis/tracy.git"><img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github&style=flat-square" alt="Repository"></a>
-  <a href="https://github.com/Xenonesis/tracy/actions"><img src="https://img.shields.io/github/actions/workflow/status/Xenonesis/tracy/python-app.yml?branch=main&style=flat-square" alt="Build Status"></a>
-  <a href="https://github.com/Xenonesis/tracy/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/Xenonesis/tracy?style=flat-square" alt="License"></a>
-  <img src="https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square" alt="Python Version">
-  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=flat-square" alt="Platform">
-</p>
+<a href="https://github.com/Xenonesis/tracy.git"><img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github&style=flat-square" alt="Repository"></a>
+<a href="https://github.com/Xenonesis/tracy/actions"><img src="https://img.shields.io/github/actions/workflow/status/Xenonesis/tracy/python-app.yml?branch=main&style=flat-square" alt="Build Status"></a>
+<a href="https://github.com/Xenonesis/tracy/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/Xenonesis/tracy?style=flat-square" alt="License"></a>
+<img src="https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square" alt="Python Version">
+<img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=flat-square" alt="Platform">
+
 
 > **Repository:** [https://github.com/Xenonesis/tracy.git](https://github.com/Xenonesis/tracy.git)
 
