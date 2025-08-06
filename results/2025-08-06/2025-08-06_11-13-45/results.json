@@ -1,0 +1,855 @@
+{
+  "target_info": {
+    "email": "user@gmail.com",
+    "phone": null
+  },
+  "social_media": {
+    "facebook": {
+      "platform": "Facebook",
+      "search_type": "email",
+      "query": "user@gmail.com",
+      "results": [],
+      "note": "Facebook search limited due to privacy restrictions",
+      "recommendations": [
+        "Try manual search on Facebook",
+        "Check if email is associated with public Facebook posts",
+        "Look for the email in Facebook group member lists (if accessible)"
+      ]
+    },
+    "twitter": {
+      "platform": "Twitter",
+      "search_type": "email",
+      "query": "user@gmail.com",
+      "public_search_links": [
+        "https://twitter.com/search?q=\"user@gmail.com\"&src=typed_query",
+        "https://twitter.com/search?q=user&src=typed_query",
+        "https://twitter.com/search?q=\"user@gmail.com\"%20OR%20user&src=typed_query"
+      ],
+      "note": "Open links to view live results; official API requires a key."
+    },
+    "instagram": {
+      "platform": "Instagram",
+      "search_type": "email",
+      "query": "user@gmail.com",
+      "results": [],
+      "note": "Instagram search requires specialized tools or manual investigation",
+      "recommendations": [
+        "Check if email username exists as Instagram handle",
+        "Search for email in Instagram bio descriptions",
+        "Use Instagram username enumeration tools"
+      ]
+    },
+    "linkedin": {
+      "platform": "LinkedIn",
+      "search_type": "email",
+      "query": "user@gmail.com",
+      "potential_profiles": [
+        "https://www.linkedin.com/in/user",
+        "https://www.linkedin.com/in/user",
+        "https://www.linkedin.com/in/user"
+      ],
+      "verified_profiles": [],
+      "public_search_links": {
+        "site_search": "https://www.linkedin.com/search/results/people/?keywords=user",
+        "company_people": "https://www.linkedin.com/search/results/people/?currentCompany=[\"gmail\"]&keywords=user"
+      },
+      "note": "LinkedIn blocks scraping; links provided for live results."
+    },
+    "reddit": {
+      "platform": "Reddit",
+      "search_type": "email",
+      "query": "user@gmail.com",
+      "results": [
+        {
+          "type": "search",
+          "url": "https://www.reddit.com/search.json?q=user@gmail.com",
+          "posts": [
+            {
+              "title": "JTime Watch Giveaway - Two Watches: VSF OP41 Red + VSF PAM1513",
+              "subreddit": "RepTime",
+              "permalink": "https://reddit.com/r/RepTime/comments/1kigc22/jtime_watch_giveaway_two_watches_vsf_op41_red_vsf/"
+            },
+            {
+              "title": "What is your trick that you thought everyone knew?",
+              "subreddit": "sysadmin",
+              "permalink": "https://reddit.com/r/sysadmin/comments/194eq1q/what_is_your_trick_that_you_thought_everyone_knew/"
+            },
+            {
+              "title": "JTime Watch Giveaway!",
+              "subreddit": "RepTime",
+              "permalink": "https://reddit.com/r/RepTime/comments/xr662t/jtime_watch_giveaway/"
+            },
+            {
+              "title": "🎁Wsongtime-New TD Giveaways，We are different and never stingy🎁",
+              "subreddit": "RepTime",
+              "permalink": "https://reddit.com/r/RepTime/comments/1jzxaj8/wsongtimenew_td_giveawayswe_are_different_and/"
+            },
+            {
+              "title": "New Google Docs phishing scam, almost undetectable",
+              "subreddit": "google",
+              "permalink": "https://reddit.com/r/google/comments/692cr4/new_google_docs_phishing_scam_almost_undetectable/"
+            }
+          ]
+        }
+      ],
+      "search_urls": [
+        "https://www.reddit.com/search/?q=user@gmail.com",
+        "https://www.reddit.com/user/user"
+      ]
+    },
+    "github": {
+      "platform": "GitHub",
+      "search_type": "email",
+      "query": "user@gmail.com",
+      "results": [
+        {
+          "type": "profile_found",
+          "url": "https://github.com/user",
+          "status": "HTTP 200"
+        }
+      ],
+      "public_search_links": {
+        "commits_by_email": "https://github.com/search?q=user@gmail.com&type=commits",
+        "issues_by_email": "https://github.com/search?q=user@gmail.com&type=issues",
+        "users_by_username": "https://github.com/search?q=user&type=users"
+      }
+    },
+    "tiktok": {
+      "platform": "TikTok",
+      "search_type": "email",
+      "query": "user@gmail.com",
+      "search_urls": [
+        "https://www.tiktok.com/@user",
+        "https://www.tiktok.com/@user"
+      ],
+      "note": "Open links to view live results."
+    }
+  },
+  "breaches": {
+    "email": "user@gmail.com",
+    "breaches": [],
+    "pastes": [],
+    "total_breaches": 0,
+    "risk_score": "Low",
+    "sources_checked": [
+      "HaveIBeenPwned",
+      "DeHashed",
+      "BreachDirectory",
+      "LeakCheck"
+    ]
+  },
+  "professional": {
+    "linkedin": {
+      "platform": "LinkedIn",
+      "search_type": "email",
+      "email": "user@gmail.com",
+      "potential_profiles": [
+        "https://linkedin.com/in/user",
+        "https://linkedin.com/in/user",
+        "https://linkedin.com/in/user",
+        "https://linkedin.com/in/user",
+        "https://linkedin.com/in/usergmail",
+        "https://linkedin.com/in/user-gmail"
+      ],
+      "verified_profiles": [],
+      "company_search": "https://linkedin.com/company/gmail",
+      "search_suggestions": [
+        "Search LinkedIn for \"user\"",
+        "Look for employees at gmail",
+        "Check LinkedIn Sales Navigator",
+        "Use LinkedIn email finder tools"
+      ],
+      "note": "LinkedIn has strict anti-scraping measures"
+    },
+    "github": {
+      "platform": "GitHub",
+      "search_type": "email",
+      "email": "user@gmail.com",
+      "profiles": [
+        {
+          "username": "user",
+          "url": "https://github.com/user",
+          "status": "Profile exists",
+          "needs_verification": true
+        },
+        {
+          "username": "user",
+          "url": "https://github.com/user",
+          "status": "Profile exists",
+          "needs_verification": true
+        }
+      ],
+      "repositories": [],
+      "commits": [],
+      "api_searches": [
+        "Search commits by email: user@gmail.com",
+        "Search repositories by email: user@gmail.com",
+        "Search issues by email: user@gmail.com",
+        "Search pull requests by email: user@gmail.com"
+      ],
+      "manual_searches": [
+        "https://github.com/search?q=user@gmail.com&type=commits",
+        "https://github.com/search?q=user@gmail.com&type=issues",
+        "https://github.com/search?q=user&type=users"
+      ]
+    },
+    "stackoverflow": {
+      "platform": "Stack Overflow",
+      "search_type": "email",
+      "email": "user@gmail.com",
+      "potential_profiles": [
+        "https://stackoverflow.com/users/user",
+        "https://stackoverflow.com/search?q=user:user"
+      ],
+      "search_urls": [
+        "https://stackoverflow.com/search?q=user@gmail.com",
+        "https://stackoverflow.com/search?q=user"
+      ],
+      "related_sites": [
+        "https://stackexchange.com/search?q=user@gmail.com",
+        "https://superuser.com/search?q=user@gmail.com",
+        "https://serverfault.com/search?q=user@gmail.com"
+      ],
+      "note": "Stack Overflow search requires manual verification"
+    },
+    "angellist": {
+      "platform": "AngelList (Wellfound)",
+      "search_type": "email",
+      "email": "user@gmail.com",
+      "potential_profiles": [
+        "https://wellfound.com/user",
+        "https://angel.co/user"
+      ],
+      "search_suggestions": [
+        "Search for \"user\" on Wellfound",
+        "Look for startup employees with email domain",
+        "Check investor profiles"
+      ],
+      "note": "AngelList rebranded to Wellfound"
+    },
+    "crunchbase": {
+      "platform": "Crunchbase",
+      "search_type": "email",
+      "email": "user@gmail.com",
+      "company_search": "https://crunchbase.com/organization/gmail",
+      "search_suggestions": [
+        "Search for company: gmail",
+        "Look for executives with email domain",
+        "Check funding information",
+        "Look for founder profiles"
+      ],
+      "note": "Crunchbase requires subscription for detailed info"
+    },
+    "behance": {
+      "platform": "Behance",
+      "search_type": "email",
+      "email": "user@gmail.com",
+      "potential_profiles": [
+        "https://behance.net/user",
+        "https://behance.net/user",
+        "https://behance.net/user"
+      ],
+      "search_url": "https://behance.net/search/users?search=user",
+      "note": "Behance is Adobe's creative portfolio platform"
+    },
+    "dribbble": {
+      "platform": "Dribbble",
+      "search_type": "email",
+      "email": "user@gmail.com",
+      "potential_profiles": [
+        "https://dribbble.com/user",
+        "https://dribbble.com/user",
+        "https://dribbble.com/user"
+      ],
+      "search_url": "https://dribbble.com/search/user",
+      "note": "Dribbble is a design portfolio platform"
+    },
+    "kaggle": {
+      "platform": "Kaggle",
+      "search_type": "email",
+      "email": "user@gmail.com",
+      "potential_profiles": [
+        "https://kaggle.com/user",
+        "https://kaggle.com/user",
+        "https://kaggle.com/user"
+      ],
+      "search_suggestions": [
+        "Search Kaggle datasets by user",
+        "Look for competition participation",
+        "Check notebook publications"
+      ],
+      "note": "Kaggle is a data science competition platform"
+    }
+  },
+  "phone_intel": {},
+  "search_results": {
+    "email": {
+      "email": "user@gmail.com",
+      "google_results": [
+        {
+          "query": "\"user@gmail.com\"",
+          "engine": "Google",
+          "status": "Link provided",
+          "url": "https://www.google.com/search?q=%22user%40gmail.com%22",
+          "note": "Open the link to view live results in the browser"
+        },
+        {
+          "query": "\"user@gmail.com\" -site:linkedin.com",
+          "engine": "Google",
+          "status": "Link provided",
+          "url": "https://www.google.com/search?q=%22user%40gmail.com%22%20-site%3Alinkedin.com",
+          "note": "Open the link to view live results in the browser"
+        },
+        {
+          "query": "\"user@gmail.com\" site:facebook.com",
+          "engine": "Google",
+          "status": "Link provided",
+          "url": "https://www.google.com/search?q=%22user%40gmail.com%22%20site%3Afacebook.com",
+          "note": "Open the link to view live results in the browser"
+        }
+      ],
+      "bing_results": [
+        {
+          "query": "\"user@gmail.com\"",
+          "engine": "Bing",
+          "status": "Link provided",
+          "url": "https://www.bing.com/search?q=%22user%40gmail.com%22",
+          "note": "Open the link to view live results in the browser"
+        },
+        {
+          "query": "\"user@gmail.com\" -site:linkedin.com",
+          "engine": "Bing",
+          "status": "Link provided",
+          "url": "https://www.bing.com/search?q=%22user%40gmail.com%22%20-site%3Alinkedin.com",
+          "note": "Open the link to view live results in the browser"
+        },
+        {
+          "query": "\"user@gmail.com\" site:facebook.com",
+          "engine": "Bing",
+          "status": "Link provided",
+          "url": "https://www.bing.com/search?q=%22user%40gmail.com%22%20site%3Afacebook.com",
+          "note": "Open the link to view live results in the browser"
+        }
+      ],
+      "duckduckgo_results": [
+        {
+          "query": "\"user@gmail.com\"",
+          "engine": "DuckDuckGo",
+          "status": "OK",
+          "api_url": "https://api.duckduckgo.com/?q=%22user%40gmail.com%22&format=json&no_redirect=1&no_html=1",
+          "AbstractText": "",
+          "AbstractURL": "",
+          "Heading": "",
+          "RelatedTopics": []
+        },
+        {
+          "query": "\"user@gmail.com\" -site:linkedin.com",
+          "engine": "DuckDuckGo",
+          "status": "OK",
+          "api_url": "https://api.duckduckgo.com/?q=%22user%40gmail.com%22%20-site%3Alinkedin.com&format=json&no_redirect=1&no_html=1",
+          "AbstractText": "",
+          "AbstractURL": "",
+          "Heading": "",
+          "RelatedTopics": []
+        }
+      ],
+      "dorking_queries": [
+        "\"user@gmail.com\"",
+        "\"user@gmail.com\" -site:linkedin.com",
+        "\"user@gmail.com\" site:facebook.com",
+        "\"user@gmail.com\" site:twitter.com",
+        "\"user@gmail.com\" site:instagram.com",
+        "\"user@gmail.com\" site:github.com",
+        "\"user@gmail.com\" site:stackoverflow.com",
+        "\"user@gmail.com\" site:reddit.com",
+        "\"user@gmail.com\" filetype:pdf",
+        "\"user@gmail.com\" filetype:doc",
+        "\"user@gmail.com\" filetype:docx",
+        "\"user@gmail.com\" filetype:xls",
+        "\"user@gmail.com\" \"contact\" OR \"email\"",
+        "\"user\" site:gmail.com",
+        "\"user\" \"gmail\"",
+        "\"user@gmail.com\" \"resume\" OR \"cv\"",
+        "\"user@gmail.com\" \"profile\" OR \"about\"",
+        "\"user@gmail.com\" \"phone\" OR \"mobile\"",
+        "\"user@gmail.com\" \"address\" OR \"location\"",
+        "intext:\"user@gmail.com\" site:pastebin.com",
+        "intext:\"user@gmail.com\" site:paste.org",
+        "\"user@gmail.com\" \"breach\" OR \"leak\" OR \"dump\""
+      ],
+      "social_mentions": [],
+      "professional_mentions": []
+    }
+  },
+  "correlations": {
+    "usernames": {
+      "user": {
+        "source": "email",
+        "platforms": [
+          "email",
+          "linkedin",
+          "linkedin",
+          "linkedin",
+          "linkedin",
+          "stackoverflow",
+          "angellist",
+          "angellist",
+          "behance",
+          "behance",
+          "behance",
+          "dribbble",
+          "dribbble",
+          "dribbble",
+          "kaggle",
+          "kaggle",
+          "kaggle"
+        ],
+        "variations": [
+          "USER",
+          "user"
+        ]
+      },
+      "usergmail": {
+        "source": "professional",
+        "platforms": [
+          "linkedin"
+        ],
+        "variations": []
+      },
+      "user-gmail": {
+        "source": "professional",
+        "platforms": [
+          "linkedin"
+        ],
+        "variations": []
+      }
+    },
+    "names": {
+      "full_names": [
+        "Check Linked",
+        "New Google",
+        "Search Linked",
+        "Search Kaggle",
+        "Use Instagram",
+        "In Sales",
+        "Use Linked",
+        "Two Watches",
+        "Time Watch",
+        "Stack Overflow"
+      ],
+      "first_names": [
+        "In",
+        "Search",
+        "Time",
+        "New",
+        "Two",
+        "Check",
+        "Use",
+        "Stack"
+      ],
+      "last_names": [
+        "Sales",
+        "Watch",
+        "Overflow",
+        "Linked",
+        "Kaggle",
+        "Watches",
+        "Google",
+        "Instagram"
+      ],
+      "nicknames": [],
+      "confidence_scores": {}
+    },
+    "companies": {
+      "email_domain_companies": [
+        {
+          "name": "Gmail",
+          "domain": "gmail.com",
+          "source": "email_domain"
+        }
+      ],
+      "mentioned_companies": [
+        {
+          "name": "Gmail",
+          "source": "linkedin",
+          "url": "https://linkedin.com/company/gmail"
+        },
+        {
+          "name": "Gmail",
+          "source": "crunchbase",
+          "url": "https://crunchbase.com/organization/gmail"
+        }
+      ],
+      "employment_history": [],
+      "confidence_scores": {}
+    },
+    "locations": {
+      "phone_locations": [],
+      "mentioned_locations": [],
+      "timezones": [],
+      "countries": []
+    },
+    "cross_platform_matches": {
+      "username_matches": {},
+      "email_matches": {},
+      "phone_matches": {},
+      "profile_matches": {
+        "user": [
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/in/user"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/in/user"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/in/user"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/in/user"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/in/usergmail"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/in/user-gmail"
+          },
+          {
+            "platform": "stackoverflow",
+            "url": "https://stackoverflow.com/users/user"
+          },
+          {
+            "platform": "stackoverflow",
+            "url": "https://stackoverflow.com/search?q=user:user"
+          },
+          {
+            "platform": "angellist",
+            "url": "https://wellfound.com/user"
+          },
+          {
+            "platform": "angellist",
+            "url": "https://angel.co/user"
+          },
+          {
+            "platform": "behance",
+            "url": "https://behance.net/user"
+          },
+          {
+            "platform": "behance",
+            "url": "https://behance.net/user"
+          },
+          {
+            "platform": "behance",
+            "url": "https://behance.net/user"
+          },
+          {
+            "platform": "dribbble",
+            "url": "https://dribbble.com/user"
+          },
+          {
+            "platform": "dribbble",
+            "url": "https://dribbble.com/user"
+          },
+          {
+            "platform": "dribbble",
+            "url": "https://dribbble.com/user"
+          },
+          {
+            "platform": "kaggle",
+            "url": "https://kaggle.com/user"
+          },
+          {
+            "platform": "kaggle",
+            "url": "https://kaggle.com/user"
+          },
+          {
+            "platform": "kaggle",
+            "url": "https://kaggle.com/user"
+          }
+        ]
+      }
+    },
+    "timeline": [
+      {
+        "timestamp": "2025-08-06T11:13:39.153203",
+        "event": "Investigation started",
+        "source": "tracy",
+        "details": {
+          "email": "user@gmail.com",
+          "phone": null
+        }
+      }
+    ],
+    "confidence_scores": {
+      "overall_confidence": 30.0,
+      "username_confidence": 0,
+      "identity_confidence": 100,
+      "location_confidence": 0
+    },
+    "relationship_graph": {
+      "nodes": [
+        {
+          "id": "target",
+          "label": "Target",
+          "type": "target",
+          "size": 30
+        },
+        {
+          "id": "username_user",
+          "label": "user",
+          "type": "username",
+          "size": 20,
+          "platforms": [
+            "email",
+            "linkedin",
+            "linkedin",
+            "linkedin",
+            "linkedin",
+            "stackoverflow",
+            "angellist",
+            "angellist",
+            "behance",
+            "behance",
+            "behance",
+            "dribbble",
+            "dribbble",
+            "dribbble",
+            "kaggle",
+            "kaggle",
+            "kaggle"
+          ]
+        },
+        {
+          "id": "username_usergmail",
+          "label": "usergmail",
+          "type": "username",
+          "size": 20,
+          "platforms": [
+            "linkedin"
+          ]
+        },
+        {
+          "id": "username_user-gmail",
+          "label": "user-gmail",
+          "type": "username",
+          "size": 20,
+          "platforms": [
+            "linkedin"
+          ]
+        },
+        {
+          "id": "platform_angellist",
+          "label": "Angellist",
+          "type": "platform",
+          "size": 15
+        },
+        {
+          "id": "platform_dribbble",
+          "label": "Dribbble",
+          "type": "platform",
+          "size": 15
+        },
+        {
+          "id": "platform_email",
+          "label": "Email",
+          "type": "platform",
+          "size": 15
+        },
+        {
+          "id": "platform_behance",
+          "label": "Behance",
+          "type": "platform",
+          "size": 15
+        },
+        {
+          "id": "platform_linkedin",
+          "label": "Linkedin",
+          "type": "platform",
+          "size": 15
+        },
+        {
+          "id": "platform_kaggle",
+          "label": "Kaggle",
+          "type": "platform",
+          "size": 15
+        },
+        {
+          "id": "platform_stackoverflow",
+          "label": "Stackoverflow",
+          "type": "platform",
+          "size": 15
+        }
+      ],
+      "edges": [
+        {
+          "from": "target",
+          "to": "username_user",
+          "label": "uses_username"
+        },
+        {
+          "from": "target",
+          "to": "username_usergmail",
+          "label": "uses_username"
+        },
+        {
+          "from": "target",
+          "to": "username_user-gmail",
+          "label": "uses_username"
+        },
+        {
+          "from": "username_user",
+          "to": "platform_angellist",
+          "label": "found_on"
+        },
+        {
+          "from": "username_user",
+          "to": "platform_dribbble",
+          "label": "found_on"
+        },
+        {
+          "from": "username_user",
+          "to": "platform_email",
+          "label": "found_on"
+        },
+        {
+          "from": "username_user",
+          "to": "platform_behance",
+          "label": "found_on"
+        },
+        {
+          "from": "username_user",
+          "to": "platform_linkedin",
+          "label": "found_on"
+        },
+        {
+          "from": "username_usergmail",
+          "to": "platform_linkedin",
+          "label": "found_on"
+        },
+        {
+          "from": "username_user-gmail",
+          "to": "platform_linkedin",
+          "label": "found_on"
+        },
+        {
+          "from": "username_user",
+          "to": "platform_kaggle",
+          "label": "found_on"
+        },
+        {
+          "from": "username_user",
+          "to": "platform_stackoverflow",
+          "label": "found_on"
+        }
+      ],
+      "layout": "force-directed"
+    },
+    "summary": {
+      "total_usernames_found": 3,
+      "total_platforms_found": 7,
+      "cross_platform_matches": 0,
+      "confidence_level": "Low",
+      "key_findings": [
+        "Target has presence on 7 platforms"
+      ],
+      "recommendations": [
+        "Low confidence - consider additional data sources"
+      ]
+    }
+  },
+  "email_rep": {
+    "status": "no_key",
+    "warning": "Set your API first"
+  },
+  "hunter": {
+    "status": "no_key",
+    "warning": "Set your API first"
+  },
+  "dns_whois": {
+    "dns": {
+      "domain": "gmail.com",
+      "records": {
+        "A": [
+          "142.251.43.165"
+        ],
+        "AAAA": [
+          "2404:6800:4009:80d::2005"
+        ],
+        "MX": [
+          "5 gmail-smtp-in.l.google.com.",
+          "40 alt4.gmail-smtp-in.l.google.com.",
+          "30 alt3.gmail-smtp-in.l.google.com.",
+          "20 alt2.gmail-smtp-in.l.google.com.",
+          "10 alt1.gmail-smtp-in.l.google.com."
+        ],
+        "NS": [
+          "ns2.google.com.",
+          "ns3.google.com.",
+          "ns1.google.com.",
+          "ns4.google.com."
+        ],
+        "TXT": [
+          "\"yahoo-verification-key=dKYwfVbaxatmcXiXy6LDAxMRirqpOq5tj98iJv9qWVk=\"",
+          "\"v=spf1 redirect=_spf.google.com\"",
+          "\"globalsign-smime-dv=CDYX+XFHUw2wml6/Gb8+59BsH31KzUr6c1l2BPvqKX8=\""
+        ]
+      },
+      "errors": {}
+    },
+    "whois": {
+      "domain": "gmail.com",
+      "whois": {
+        "domain_name": "GMAIL.COM, gmail.com",
+        "registrar": "MarkMonitor, Inc.",
+        "creation_date": "1995-08-13 04:00:00, 1995-08-13 07:00:00",
+        "expiration_date": "2026-08-12 04:00:00, 2026-08-12 00:00:00",
+        "updated_date": "2025-07-11 10:10:56",
+        "status": [
+          "clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited",
+          "clientTransferProhibited https://icann.org/epp#clientTransferProhibited",
+          "clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited",
+          "serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited",
+          "serverTransferProhibited https://icann.org/epp#serverTransferProhibited",
+          "serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited",
+          "clientUpdateProhibited (https://www.icann.org/epp#clientUpdateProhibited)",
+          "clientTransferProhibited (https://www.icann.org/epp#clientTransferProhibited)",
+          "clientDeleteProhibited (https://www.icann.org/epp#clientDeleteProhibited)",
+          "serverUpdateProhibited (https://www.icann.org/epp#serverUpdateProhibited)",
+          "serverTransferProhibited (https://www.icann.org/epp#serverTransferProhibited)",
+          "serverDeleteProhibited (https://www.icann.org/epp#serverDeleteProhibited)"
+        ],
+        "name_servers": [
+          "NS1.GOOGLE.COM",
+          "NS2.GOOGLE.COM",
+          "NS3.GOOGLE.COM",
+          "NS4.GOOGLE.COM",
+          "ns2.google.com",
+          "ns3.google.com",
+          "ns4.google.com",
+          "ns1.google.com"
+        ],
+        "emails": [
+          "abusecomplaints@markmonitor.com",
+          "whoisrequest@markmonitor.com"
+        ],
+        "country": "US",
+        "org": "Google LLC"
+      }
+    }
+  },
+  "socialscan": {
+    "returncode": 2,
+    "results": [],
+    "stderr": "usage: __main__.py [-h] [--platforms [platform ...]]\n                   [--view-by {platform,query}] [--available-only]\n                   [--cache-tokens] [--input input.txt]\n                   [--proxy-list proxy_list.txt] [--verbose] [--show-urls]\n                   [--json json.txt] [--debug] [--version]\n                   [query ...]\n__main__.py: error: argument --json: expected one argument"
+  },
+  "sherlock": {
+    "status": "not_installed",
+    "note": "Install sherlock CLI to enable (pip or git)."
+  },
+  "timestamp": "2025-08-06T11:13:39.153203"
+}
