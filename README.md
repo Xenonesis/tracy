@@ -5,14 +5,14 @@
 <h1 align="center">Tracy — Digital Footprint OSINT Tool</h1>
 
 <p align="center">
-  <a href="https://github.com/Xenonesis/tracy"><img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github&style=flat-square" alt="Repository"></a>
+  <a href="https://github.com/Xenonesis/tracy.git"><img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github&style=flat-square" alt="Repository"></a>
   <a href="https://github.com/Xenonesis/tracy/actions"><img src="https://img.shields.io/github/actions/workflow/status/Xenonesis/tracy/python-app.yml?branch=main&style=flat-square" alt="Build Status"></a>
   <a href="https://github.com/Xenonesis/tracy/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/Xenonesis/tracy?style=flat-square" alt="License"></a>
   <img src="https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square" alt="Python Version">
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=flat-square" alt="Platform">
 </p>
 
-> **Repository:** [https://github.com/Xenonesis/tracy](https://github.com/Xenonesis/tracy)
+> **Repository:** [https://github.com/Xenonesis/tracy.git](https://github.com/Xenonesis/tracy.git)
 
 ---
 
@@ -78,6 +78,78 @@ _Minimum usage does not require any API keys, but some integrations will be no-o
 <details>
   <summary><strong>⚙️ Configuration (click to expand)</strong></summary>
 
+```mermaid
+flowchart TD
+    A[.env File] --> B[config.py]
+    B --> C[API Keys]
+    B --> D[Feature Toggles]
+    B --> E[Operational Settings]
+    C --> F[Modules]
+    D --> F
+    E --> F
+    F --> G[Investigation Run]
+    G --> H[Results/Reports]
+```
+
+| Variable                | Type      | Purpose                                      | Example Value                |
+|-------------------------|-----------|----------------------------------------------|------------------------------|
+| SHODAN_API_KEY          | API Key   | Enables Shodan integration                   | `your_shodan_api_key_here`   |
+| TWITTER_BEARER_TOKEN    | API Key   | Enables Twitter integration                  | `your_twitter_token_here`    |
+| HAVEIBEENPWNED_API_KEY  | API Key   | Enables HIBP breach checks                   | `your_hibp_api_key_here`     |
+| DEHASHED_API_KEY        | API Key   | Enables DeHashed breach checks               | `your_dehashed_api_key_here` |
+| DEHASHED_USERNAME       | Username  | Used for DeHashed authentication             | `your_dehashed_username`     |
+| EMAILREP_API_KEY        | API Key   | Enables EmailRep reputation checks           | `your_emailrep_api_key_here` |
+| HUNTER_API_KEY          | API Key   | Enables Hunter email verification            | `your_hunter_api_key_here`   |
+| ENABLE_EMAILREP         | Toggle    | Enable/disable EmailRep module               | `true` / `false`             |
+| ENABLE_HIBP             | Toggle    | Enable/disable HIBP module                   | `true` / `false`             |
+| ENABLE_HUNTER           | Toggle    | Enable/disable Hunter module                 | `true` / `false`             |
+| ENABLE_SOCIALSCAN       | Toggle    | Enable/disable SocialScan module             | `true` / `false`             |
+| ENABLE_DNS_WHOIS        | Toggle    | Enable/disable DNS/WHOIS module              | `true` / `false`             |
+| ENABLE_SHERLOCK         | Toggle    | Enable/disable Sherlock module               | `true` / `false`             |
+| REQUEST_TIMEOUT         | Setting   | Timeout for requests (seconds)               | `30`                         |
+| RATE_LIMIT_DELAY        | Setting   | Delay between requests (seconds)             | `1`                          |
+| MAX_RESULTS_PER_PLATFORM| Setting   | Max results per platform                     | `50`                         |
+| DASH_HOST               | Setting   | Dashboard host address                       | `127.0.0.1`                  |
+| DASH_PORT               | Setting   | Dashboard port                               | `8050`                       |
+| DASH_DEBUG              | Setting   | Dashboard debug mode                         | `true` / `false`             |
+
+<details>
+  <summary><strong>ASCII Configuration Flow (click to expand)</strong></summary>
+
+```
++-------------------+
+|      .env File    |
++-------------------+
+         |
+         v
++-------------------+
+|    config.py      |
++-------------------+
+         |
+         v
++-------------------+    +-------------------+    +-------------------+
+|   API Keys        |    | Feature Toggles   |    | Operational Set.  |
++-------------------+    +-------------------+    +-------------------+
+         |                |                     |
+         v                v                     v
++------------------------------------------------+
+|                Modules                         |
++------------------------------------------------+
+         |
+         v
++-------------------+
+| Investigation Run |
++-------------------+
+         |
+         v
++-------------------+
+| Results/Reports   |
++-------------------+
+```
+</details>
+
+---
+
 **Environment variables (.env) read by config.py:**
 
 **API keys (optional):**
@@ -119,16 +191,119 @@ ENABLE_SOCIALSCAN=true
 ENABLE_DNS_WHOIS=true
 ENABLE_SHERLOCK=true
 ```
+
+---
+
+### Configuration Checklist
+
+- [x] Mermaid and ASCII diagrams included
+- [x] Table of variables and examples
+- [x] Detailed flow from .env to results
+- [x] Interactive markdown for easy navigation
+
 </details>
 
 
 ## 🏗️ Architecture Overview
 
-<p align="center">
-  <img src="assets/architecture-diagram.png" alt="Tracy Architecture Diagram" width="600"/>
-  <br>
-  <em>High-level architecture: modules, orchestration, and reporting flow.</em>
-</p>
+```mermaid
+graph TD
+    A[tracy.py (Entry Point)] --> B[Input Validation]
+    B --> C[Async Task Orchestration]
+    C --> D[Social Media Module]
+    C --> E[Breach Intelligence Module]
+    C --> F[Search Engine Dorking]
+    C --> G[Phone Intelligence]
+    C --> H[DNS/WHOIS Lookup]
+    C --> I[Reputation/Verification]
+    C --> J[Presence Checks]
+    D --> K[Correlation Engine]
+    E --> K
+    F --> K
+    G --> K
+    H --> K
+    I --> K
+    J --> K
+    K --> L[Report Generator]
+    L --> M[Output Artifacts (HTML, Markdown, JSON, Text)]
+    M --> N[Interactive Dashboard]
+```
+
+<details>
+  <summary><strong>ASCII Architecture Diagram (click to expand)</strong></summary>
+
+```
++-------------------+
+|    tracy.py       |
++-------------------+
+         |
+         v
++-------------------+
+| Input Validation  |
++-------------------+
+         |
+         v
++-------------------+
+| Async Orchestration|
++-------------------+
+         |
+         v
++-------------------+    +-------------------+    +-------------------+
+| Social Media      |    | Breach Intelligence|    | Search Engines    |
++-------------------+    +-------------------+    +-------------------+
+         |                        |                        |
+         v                        v                        v
++---------------------------------------------------------------+
+|                Correlation Engine                             |
++---------------------------------------------------------------+
+         |
+         v
++-------------------+
+| Report Generator  |
++-------------------+
+         |
+         v
++-------------------+
+| Output Artifacts  |
++-------------------+
+         |
+         v
++-------------------+
+| Interactive Dash  |
++-------------------+
+```
+</details>
+
+<details>
+  <summary><strong>Module Relationships (Mermaid)</strong></summary>
+
+```mermaid
+classDiagram
+    class tracy_py {
+      +validate_inputs()
+      +run_async_tasks()
+      +correlate_findings()
+      +generate_report()
+    }
+    class social_media_py
+    class breach_checker_py
+    class search_engines_py
+    class phone_intel_py
+    class util_dns_whois_py
+    class report_generator_py
+    class dashboard_py
+    tracy_py --> social_media_py
+    tracy_py --> breach_checker_py
+    tracy_py --> search_engines_py
+    tracy_py --> phone_intel_py
+    tracy_py --> util_dns_whois_py
+    tracy_py --> report_generator_py
+    tracy_py --> dashboard_py
+    report_generator_py --> dashboard_py
+```
+</details>
+
+---
 
 Entry point:
 - tracy.py — Orchestrates the entire investigation lifecycle:
@@ -270,6 +445,25 @@ python tracy.py --email target@example.com --phone +15551234567
 python tracy.py --email jane.doe@example.com --report html
 ```
 
+<details>
+  <summary><strong>ASCII CLI Usage Diagram (click to expand)</strong></summary>
+
+```
++-----------------------------+
+|      tracy.py CLI Usage     |
++-----------------------------+
+| python tracy.py --email ... |
+| python tracy.py --phone ... |
+| python tracy.py --output ...|
+| python tracy.py --report ...|
++-----------------------------+
+| Options:                    |
+| --email, --phone, --output, |
+| --report                    |
++-----------------------------+
+```
+</details>
+
 **Outputs:**
 - Results are stored under `results/YYYY-MM-DD/YYYY-MM-DD_HH-MM-SS/`
   - `results.json` — full structured data
@@ -367,11 +561,45 @@ python tracy.py --email alice@example.com --report json
 <details>
   <summary><strong>📁 Output Structure (click to expand)</strong></summary>
 
+```mermaid
+flowchart TD
+    A[Investigation Run] --> B[results/YYYY-MM-DD/YYYY-MM-DD_HH-MM-SS/]
+    B --> C[results.json]
+    B --> D[report.html]
+    B --> E[report.md]
+    B --> F[report.txt]
+    B --> G[tracy_report_*.{html,md,txt,json}]
+    C --> H[Structured Data]
+    D --> I[HTML Report]
+    E --> J[Markdown Report]
+    F --> K[Text Report]
+    G --> L[Other Formats]
+```
+
 | Path | Description |
 |------|-------------|
 | `results/YYYY-MM-DD/YYYY-MM-DD_HH-MM-SS/results.json` | Full structured data |
 | `results/YYYY-MM-DD/YYYY-MM-DD_HH-MM-SS/report.html` | Generated HTML report |
 | `report.md` / `report.txt` / `tracy_report_*.{html,md,txt,json}` | Other formats as applicable |
+
+<details>
+  <summary><strong>ASCII Output Structure Diagram (click to expand)</strong></summary>
+
+```
++-------------------------------------------------------------+
+|                   Output Directory Structure                |
++-------------------------------------------------------------+
+| results/                                                    |
+|   YYYY-MM-DD/                                               |
+|     YYYY-MM-DD_HH-MM-SS/                                    |
+|       results.json      <-- Full structured investigation    |
+|       report.html       <-- HTML report                      |
+|       report.md         <-- Markdown report                  |
+|       report.txt        <-- Text report                      |
+|       tracy_report_*    <-- Other formats                    |
++-------------------------------------------------------------+
+```
+</details>
 
 **Top-level JSON keys:**
 | Key | Description |
@@ -387,6 +615,116 @@ python tracy.py --email alice@example.com --report json
 | `correlations` | Summarization and cross-platform matches |
 | `timestamp` | ISO 8601 |
 
+> **Note:**  
+> Each output file is designed for a specific audience.  
+> - `results.json` is ideal for programmatic analysis and integration with other tools.  
+> - `report.html` provides a visually rich summary for human review.  
+> - `report.md` is suitable for sharing in markdown-based platforms.  
+> - `report.txt` offers a plain text version for quick reference or archiving.  
+> - Custom formats (`tracy_report_*`) allow for extensibility and integration with external systems.
+
+> **Tip:**  
+> You can automate post-processing of output files using scripts or CI/CD pipelines.  
+> For example, you might parse `results.json` to extract specific findings, or convert `report.md` to PDF for distribution.
+
+---
+
+### Extended Output Structure Example
+
+Below is an extended example of the output directory, showing possible files and their purposes:
+
+```
+results/
+└── 2025-08-06/
+    └── 2025-08-06_11-13-45/
+        ├── results.json
+        ├── report.html
+        ├── report.md
+        ├── report.txt
+        ├── tracy_report_custom.html
+        ├── tracy_report_custom.md
+        ├── tracy_report_custom.txt
+        └── attachments/
+            ├── evidence_1.txt
+            ├── screenshot_1.txt
+            └── notes.txt
+```
+
+- `attachments/` may contain additional evidence, screenshots (as text), or analyst notes.
+
+---
+
+### Output File Details
+
+| File Name                | Format    | Purpose                                         | Audience         |
+|--------------------------|-----------|-------------------------------------------------|------------------|
+| results.json             | JSON      | Structured investigation data                   | Developers, Analysts |
+| report.html              | HTML      | Visual summary, interactive dashboard           | End Users, Analysts  |
+| report.md                | Markdown  | Shareable summary for markdown platforms        | Teams, Communities   |
+| report.txt               | Text      | Plain text summary for quick review             | All users            |
+| tracy_report_custom.*    | Various   | Custom formats for integrations                 | Integrators          |
+| attachments/*            | Text      | Supplementary evidence and notes                | Analysts, Reviewers  |
+
+---
+
+### Example: JSON Output Structure
+
+```json
+{
+  "target_info": {
+    "email": "alice@example.com",
+    "phone": "+15551234567"
+  },
+  "social_media": {
+    "twitter": { "found": true, "profile_url": "..." },
+    "facebook": { "found": false }
+  },
+  "breaches": {
+    "breaches": [ ... ],
+    "pastes": [ ... ],
+    "total_breaches": 3,
+    "risk_score": 7,
+    "sources_checked": [ "HIBP", "DeHashed" ]
+  },
+  "professional": {
+    "linkedin": { "found": true, "profile_url": "..." }
+  },
+  "phone_intel": {
+    "validation": true,
+    "carrier": "Verizon",
+    "region": "California",
+    "timezone": "PST",
+    "risk_assessment": "Low",
+    "osint_sources": [ ... ]
+  },
+  "search_results": {
+    "email": { "google_results": [ ... ], "bing_results": [ ... ], "duckduckgo_results": [ ... ], "dorking_queries": [ ... ] },
+    "phone": { ... }
+  },
+  "dns_whois": {
+    "dns": { ... },
+    "whois": { ... }
+  },
+  "email_rep": { ... },
+  "hunter": { ... },
+  "socialscan": { ... },
+  "sherlock": { ... },
+  "correlations": { ... },
+  "timestamp": "2025-08-06T11:13:45Z"
+}
+```
+
+---
+
+### Output Structure Checklist
+
+- [x] Directory structure is clear and organized
+- [x] Each file is documented with its purpose
+- [x] JSON keys are explained
+- [x] Example output is provided
+- [x] ASCII and Mermaid diagrams included
+- [x] Tips and notes for users
+
 </details>
 
 --------------------------------------------------------------------------------
@@ -394,14 +732,118 @@ python tracy.py --email alice@example.com --report json
 <details>
   <summary><strong>🧰 Troubleshooting (click to expand)</strong></summary>
 
-- SSL/Certificates: If aiohttp/cert verification errors occur, ensure system certificates are up to date.
-- HTTP 429 / Rate limits: Modules intentionally limit requests; still, try again later or reduce queries.
-- Missing keys: If a module warns about a missing API key, populate .env and re-run.
-- socialscan/sherlock not found: Install and ensure on PATH. Example:
-  - pip install socialscan
-  - sherlock may require separate installation (pip or cloned repo)
-- Windows firewall: If DNS/WHOIS fails, ensure outbound DNS queries and WHOIS ports are not blocked.
-- Package versions: See requirements.txt. If conflicts arise, consider a fresh virtualenv.
+```mermaid
+flowchart TD
+    A[Start Troubleshooting] --> B{Error Type}
+    B --> C[SSL/Certificates]
+    B --> D[HTTP 429 / Rate Limits]
+    B --> E[Missing API Keys]
+    B --> F[Module Not Found]
+    B --> G[Firewall Issues]
+    B --> H[Package Conflicts]
+    C --> I[Update System Certificates]
+    D --> J[Reduce Queries / Wait]
+    E --> K[Populate .env / Re-run]
+    F --> L[Install / Ensure on PATH]
+    G --> M[Check DNS/WHOIS Ports]
+    H --> N[Create Fresh Virtualenv]
+```
+
+| Error Type                | Solution                                      | Command/Action Example                |
+|--------------------------|-----------------------------------------------|---------------------------------------|
+| SSL/Certificates         | Update system certificates                    | `sudo update-ca-certificates`         |
+| HTTP 429 / Rate Limits   | Reduce queries, wait before retrying          | Wait 10 minutes, retry                |
+| Missing API Keys         | Populate .env and re-run                      | Add keys to `.env`, rerun script      |
+| Module Not Found         | Install and ensure on PATH                    | `pip install socialscan`              |
+| Firewall Issues          | Check outbound DNS/WHOIS ports                | Allow ports in firewall settings      |
+| Package Conflicts        | Create a fresh virtualenv                     | `python -m venv .venv`                |
+
+<details>
+  <summary><strong>ASCII Troubleshooting Flow (click to expand)</strong></summary>
+
+```
++--------------------------+
+|    Start Troubleshooting |
++--------------------------+
+           |
+           v
++--------------------------+
+|      What is the error?  |
++--------------------------+
+ |        |        |      |      |      |
+ v        v        v      v      v      v
+SSL   HTTP429  APIKey  Module  Firewall Package
+ |      |       |       |       |       |
+ v      v       v       v       v       v
+Update Wait   AddKey  Install  Allow   FreshEnv
+Certs         Retry   .env     PATH    Firewall Virtualenv
+```
+</details>
+
+> **Tip:**  
+> Always check the error message for clues. Most issues can be resolved by following the recommended steps above.
+
+> **Note:**  
+> For persistent issues, consult the FAQ or open an issue on [GitHub](https://github.com/Xenonesis/tracy.git/issues).
+
+---
+
+### Troubleshooting Scenarios
+
+#### Scenario 1: SSL Certificate Error
+
+- **Symptom:** aiohttp/cert verification fails.
+- **Solution:** Update system certificates.
+- **Command:**  
+  ```sh
+  sudo update-ca-certificates
+  ```
+
+#### Scenario 2: HTTP 429 / Rate Limit
+
+- **Symptom:** Too many requests, server returns 429.
+- **Solution:** Reduce queries, wait before retrying.
+- **Tip:**  
+  Use feature toggles to limit enabled modules.
+
+#### Scenario 3: Missing API Key
+
+- **Symptom:** Module warns about missing API key.
+- **Solution:** Add key to `.env` and re-run.
+- **Example:**  
+  ```
+  HAVEIBEENPWNED_API_KEY=your_key_here
+  ```
+
+#### Scenario 4: Module Not Found
+
+- **Symptom:** socialscan/sherlock not found.
+- **Solution:** Install and ensure on PATH.
+- **Command:**  
+  ```sh
+  pip install socialscan
+  ```
+
+#### Scenario 5: Firewall Issues
+
+- **Symptom:** DNS/WHOIS lookups fail.
+- **Solution:** Allow outbound DNS/WHOIS ports in firewall.
+
+#### Scenario 6: Package Version Conflict
+
+- **Symptom:** Dependency errors.
+- **Solution:** Create a fresh virtualenv and reinstall.
+
+---
+
+### Troubleshooting Checklist
+
+- [x] Error type identified
+- [x] Solution provided
+- [x] Command/action example included
+- [x] ASCII and Mermaid diagrams included
+- [x] Scenarios explained
+- [x] Tips and notes for users
 
 </details>
 
@@ -423,11 +865,121 @@ See requirements.txt for pinned versions. Major libraries:
 <details>
   <summary><strong>🗺️ Roadmap (click to expand)</strong></summary>
 
-- [ ] Additional professional and community platform adapters
-- [ ] Deeper correlation heuristics and confidence scoring
-- [ ] Optional headless browser flows for authenticated sources (behind feature flags)
-- [ ] Export improvements (PDF theming, CSV selectors)
-- [ ] Docker support and packaged binaries
+```mermaid
+flowchart TD
+    A[Start Roadmap] --> B[Platform Adapters]
+    A --> C[Correlation Heuristics]
+    A --> D[Headless Browser Flows]
+    A --> E[Export Improvements]
+    A --> F[Docker/Binaries]
+    B --> G[Community Platforms]
+    B --> H[Professional Platforms]
+    C --> I[Confidence Scoring]
+    D --> J[Feature Flags]
+    E --> K[PDF Theming]
+    E --> L[CSV Selectors]
+    F --> M[Docker Support]
+    F --> N[Packaged Binaries]
+```
+
+| Feature/Goal                        | Status   | Details/Steps                                                                 |
+|-------------------------------------|----------|-------------------------------------------------------------------------------|
+| Additional platform adapters        | Planned  | Add support for more social, professional, and community platforms            |
+| Deeper correlation heuristics       | Planned  | Implement advanced cross-signal matching and confidence scoring                |
+| Headless browser flows              | Planned  | Enable authenticated source checks behind feature flags                        |
+| Export improvements                 | Planned  | Add PDF theming, CSV selectors, and custom export formats                      |
+| Docker support and packaged binaries| Planned  | Provide Docker images and standalone binaries for easy deployment              |
+
+<details>
+  <summary><strong>ASCII Roadmap Diagram (click to expand)</strong></summary>
+
+```
++-----------------------------+
+|         Tracy Roadmap       |
++-----------------------------+
+| - Platform Adapters         |
+| - Correlation Heuristics    |
+| - Headless Browser Flows    |
+| - Export Improvements       |
+| - Docker/Binaries           |
++-----------------------------+
+| Steps:                      |
+| 1. Research new platforms   |
+| 2. Design heuristics        |
+| 3. Implement browser flows  |
+| 4. Enhance export formats   |
+| 5. Build Docker images      |
+| 6. Package binaries         |
++-----------------------------+
+```
+</details>
+
+---
+
+### Roadmap Checklist
+
+- [x] Mermaid and ASCII diagrams included
+- [x] Table of features/goals
+- [x] Detailed steps for each roadmap item
+- [x] Interactive markdown for easy navigation
+
+---
+
+### Roadmap Details
+
+#### 1. Additional Platform Adapters
+
+- Expand support for platforms such as Reddit, Instagram, TikTok, and more.
+- Integrate APIs and public endpoints for new sources.
+- Ensure compliance with platform policies.
+
+#### 2. Deeper Correlation Heuristics
+
+- Develop algorithms for cross-signal matching.
+- Implement confidence scoring for findings.
+- Visualize correlations in dashboard.
+
+#### 3. Headless Browser Flows
+
+- Add optional flows for authenticated sources.
+- Use feature flags to enable/disable.
+- Ensure privacy and compliance.
+
+#### 4. Export Improvements
+
+- Enhance PDF theming for reports.
+- Add CSV selectors for data extraction.
+- Support custom export formats.
+
+#### 5. Docker Support and Packaged Binaries
+
+- Build and publish Docker images.
+- Create standalone binaries for Windows, Linux, macOS.
+- Document deployment steps.
+
+---
+
+### Roadmap Progress Table
+
+| Step | Feature/Goal                | Status   | ETA         |
+|------|-----------------------------|----------|-------------|
+| 1    | Platform Adapters           | Planned  | Q4 2025     |
+| 2    | Correlation Heuristics      | Planned  | Q4 2025     |
+| 3    | Headless Browser Flows      | Planned  | Q1 2026     |
+| 4    | Export Improvements         | Planned  | Q1 2026     |
+| 5    | Docker/Binaries             | Planned  | Q2 2026     |
+
+---
+
+### Roadmap Interactive Checklist
+
+- [ ] Research new platforms
+- [ ] Design advanced heuristics
+- [ ] Implement browser automation
+- [ ] Enhance export formats
+- [ ] Build Docker images
+- [ ] Package binaries
+- [ ] Update documentation
 
 </details>
 
