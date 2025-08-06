@@ -1,15 +1,29 @@
-# Tracy — Digital Footprint OSINT Tool
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Xenonesis/tracy/main/assets/logo.png" alt="Tracy Logo" width="120"/>
+</p>
+
+<h1 align="center">Tracy — Digital Footprint OSINT Tool</h1>
+
+<p align="center">
+  <a href="https://github.com/Xenonesis/tracy/actions"><img src="https://img.shields.io/github/actions/workflow/status/Xenonesis/tracy/python-app.yml?branch=main&style=flat-square" alt="Build Status"></a>
+  <a href="https://github.com/Xenonesis/tracy/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/Xenonesis/tracy?style=flat-square" alt="License"></a>
+  <img src="https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square" alt="Python Version">
+  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=flat-square" alt="Platform">
+</p>
+
+---
 
 Tracy is a modern Open Source Intelligence (OSINT) orchestrator that maps a target’s digital footprint starting from an email and/or phone number. It runs concurrent, privacy‑respecting checks across social platforms, breach sources, search engines, DNS/WHOIS, and reputation/verification services, correlates signals, and generates reports and an interactive dashboard.
 
-Key goals:
-- Safe defaults using only publicly available information, with optional API integrations
-- Async-first architecture for fast concurrent investigations
-- Clean output artifacts (JSON + HTML/Markdown/Text reports) and a visual dashboard
+---
 
---------------------------------------------------------------------------------
+**Key goals** 🚀  
+- Safe defaults using only publicly available information, with optional API integrations  
+- Async-first architecture for fast concurrent investigations  
+- Clean output artifacts (JSON + HTML/Markdown/Text reports) and a visual dashboard  
 
-## Highlights
+
+## ✨ Highlights
 
 - Email and phone as inputs
 - Concurrent OSINT modules:
@@ -26,7 +40,13 @@ Key goals:
 
 --------------------------------------------------------------------------------
 
-## Architecture Overview
+## 🏗️ Architecture Overview
+
+<p align="center">
+  <img src="assets/architecture-diagram.png" alt="Tracy Architecture Diagram" width="600"/>
+  <br>
+  <em>High-level architecture: modules, orchestration, and reporting flow.</em>
+</p>
 
 Entry point:
 - tracy.py — Orchestrates the entire investigation lifecycle:
@@ -65,7 +85,9 @@ Configuration:
 
 --------------------------------------------------------------------------------
 
-## Installation
+## ⚡ Installation
+
+> **Tip:** Use a virtual environment for best results.
 
 Prerequisites:
 - Python 3.10+ recommended
@@ -97,7 +119,7 @@ Minimum usage does not require any API keys, but some integrations will be no-op
 
 --------------------------------------------------------------------------------
 
-## Configuration
+## ⚙️ Configuration
 
 Environment variables (.env) read by config.py:
 
@@ -143,7 +165,7 @@ ENABLE_SHERLOCK=true
 
 --------------------------------------------------------------------------------
 
-## Usage
+## 🖥️ Usage
 
 Basic CLI:
 ```
@@ -172,7 +194,13 @@ Outputs:
 
 --------------------------------------------------------------------------------
 
-## Interactive Dashboard
+## 📊 Interactive Dashboard
+
+<p align="center">
+  <img src="assets/dashboard-screenshot.png" alt="Tracy Dashboard Screenshot" width="700"/>
+  <br>
+  <em>Explore investigation results visually: summary cards, tabs, and network graphs.</em>
+</p>
 
 Launch the dashboard to explore investigation data interactively.
 
@@ -195,7 +223,7 @@ dash.run()
 
 --------------------------------------------------------------------------------
 
-## Data Flow
+## 🔄 Data Flow
 
 1) tracy.py validates inputs (email with email-validator, phone with phonenumbers)
 2) Async tasks execute per enabled feature:
@@ -213,7 +241,7 @@ dash.run()
 
 --------------------------------------------------------------------------------
 
-## Notes on Integrations and Ethics
+## 🛡️ Notes on Integrations and Ethics
 
 - This tool uses only publicly available endpoints by default. Some modules provide links rather than scraping results, to respect Terms of Service.
 - Where APIs require keys (HIBP, DeHashed, EmailRep, Hunter), the module gracefully degrades when keys are missing.
@@ -227,7 +255,7 @@ Legal and responsible use:
 
 --------------------------------------------------------------------------------
 
-## Examples
+## 📝 Examples
 
 Run with email only:
 ```
@@ -251,7 +279,7 @@ python tracy.py --email alice@example.com --report json
 
 --------------------------------------------------------------------------------
 
-## Output Structure
+## 📁 Output Structure
 
 results/YYYY-MM-DD/YYYY-MM-DD_HH-MM-SS/
 - results.json
@@ -272,7 +300,7 @@ Top-level JSON keys:
 
 --------------------------------------------------------------------------------
 
-## Troubleshooting
+## 🧰 Troubleshooting
 
 - SSL/Certificates: If aiohttp/cert verification errors occur, ensure system certificates are up to date.
 - HTTP 429 / Rate limits: Modules intentionally limit requests; still, try again later or reduce queries.
@@ -285,7 +313,7 @@ Top-level JSON keys:
 
 --------------------------------------------------------------------------------
 
-## Requirements
+## 📦 Requirements
 
 See requirements.txt for pinned versions. Major libraries:
 - aiohttp, asyncio
@@ -298,7 +326,7 @@ See requirements.txt for pinned versions. Major libraries:
 
 --------------------------------------------------------------------------------
 
-## Roadmap
+## 🗺️ Roadmap
 
 - Additional professional and community platform adapters
 - Deeper correlation heuristics and confidence scoring
@@ -308,6 +336,6 @@ See requirements.txt for pinned versions. Major libraries:
 
 --------------------------------------------------------------------------------
 
-## License
+## 📜 License
 
 This project is intended for educational and authorized security research. Use responsibly and lawfully. See LICENSE if included in this repository.
